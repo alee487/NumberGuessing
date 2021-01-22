@@ -1,0 +1,31 @@
+import random
+
+def attempts(tries):
+    switcher = {
+        1: print("You got it right! It only took you 1 try!"),
+#       2: print("You got it right! It only took you 2 tries!"),
+#       3: print("You got it right! It only took you 3 tries!"),
+#       4: print("You got it right! It only took you 4 tries!"),
+#       5: print("You got it right! It only took you 5 tries!"),
+#       6: print("You got it right! It only took you 6 tries!"),
+#       7: print("You got it right! It only took you 7 tries!"),
+    }
+    return switcher.get(tries, print("You took too many tries!"))
+
+number = random.randint(1,100)
+print(number)
+count = 0
+guess = 0
+while guess != number:
+    count += 1
+    guess = int(input("Guess a number between 1 and 100: "))
+    if guess == number:
+        if count == 1:
+            attempts(count)
+        else:
+            attempts(count)
+#            print("You got it right! It only took you " + str(count) + " tries!")
+    elif guess < number:
+        print("Try higher!")
+    else:
+        print("Try lower!")
